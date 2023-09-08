@@ -502,6 +502,58 @@ Content-Type: application/json
 - **available** - range of historical blocks with verified data availability (configured confidence has been achieved)
 - **app_data** - range of historical blocks with app data retrieved and verified
 
+
+## POST `/v2/submit`
+
+Submits application data to the avail network.\
+In case of `data` transaction, data transaction is created, signed and submitted.\
+In case of `extrinsic`, externaly created and signed transaction is submitted. Only one field is allowed per request.\
+Both `data` and `extrinsic` has to be encoded using base64 encoding.
+
+Request:
+
+```yaml
+POST /v2/submit HTTP/1.1
+Host: {light-client-url}
+Content-Type: application/json
+Content-Length: {content-length}
+
+{
+  "data": "{base-64-encoded-data}" // Optional
+  "extrinsic": "{base-64-encoded-data}" // Optional
+}
+```
+
+Response:
+
+```yaml
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "block_hash": "{block-hash}",
+  "hash": "{transaction-hash}",
+  "index": {transaction-index}
+}
+```
+
+If **app** mode is not active (or signing key is not configured and `data` is submitted) response is:
+
+```yaml
+HTTP/1.1 404 Not found
+```
+
+## Errors
+
+In case of an error, endpoints will return a response with `500 Internal Server Error` status code, and descriptive error message:
+
+```yaml
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+
+Internal Server Error
+```
+
 ## WebSocket API
 
 The Avail Light Client WebSocket API allows real-time communication between a client and a server over a persistent connection, enabling push notifications as an alternative to polling. Web socket API can be used on its own or in combination with HTTP API to enable different pull/push use cases.
@@ -575,6 +627,21 @@ Request current Avail Light Client status data.
 }
 ```
 
+### Submit data transaction
+
+Submits data transaction to the Avail.
+
+```json
+{
+	"type": "submit",
+	"request_id": "{uuid}",
+	"message": {
+		"data": "{base-64-encoded-data}", // Optional
+		"extrinsic": "{base-64-encoded-data}" // Optional
+	}
+}
+```
+
 ### Server-to-client messages
 
 If response contains ******request_id****** field, it will be pushed to the client which initiated request. Those messages are not subject to a topic filtering at the moment.
@@ -637,6 +704,24 @@ Status response.
   }
 }
 ```
+
+#### Data transaction submitted
+
+Data transaction submitted response. It contains transaction **hash** used to correlate transaction with verified data once transaction is included in the block and verified by the light client.
+
+```json
+{
+  "topic": "data-transaction-submitted",
+  "request_id": "{uuid}",
+  "message": {
+    "block_hash": "{block-hash}",
+    "hash": "{transaction-hash}",
+    "index": {transaction-index}
+  }
+}
+```
+
+If **app** mode is not active or signing key is not configured error response is sent with descriptive error message.
 
 #### Errors
 
