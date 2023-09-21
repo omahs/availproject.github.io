@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkavail_docs_wiki=self.webpackChunkavail_docs_wiki||[]).push([[765],{1454:t=>{t.exports=JSON.parse('{"title":"Get Started","slug":"/category/get-started","permalink":"/category/get-started","navigation":{"previous":{"title":"Quickstart","permalink":"/build/quickstart"},"next":{"title":"Create an Account","permalink":"/about/accounts"}}}')}}]);

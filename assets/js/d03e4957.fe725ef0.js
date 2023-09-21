@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkavail_docs_wiki=self.webpackChunkavail_docs_wiki||[]).push([[7734],{497:e=>{e.exports=JSON.parse('{"title":"Operate","slug":"/category/operate","permalink":"/category/operate","navigation":{"previous":{"title":"Validiums","permalink":"/about/introduction/validiums"},"next":{"title":"Types of Nodes","permalink":"/operate/node-types"}}}')}}]);
