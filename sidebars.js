@@ -87,6 +87,60 @@ module.exports = {
       },
       collapsed: true,
       items: [
+        {
+          type: "category",
+          label: "Architecture",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: false,
+          items: [
+            {
+              type: "category",
+              label: "Consensus",
+              link: {
+                type: "generated-index",
+              },
+              collapsed: true,
+              items: [
+                "design/consensus/npos",
+                "design/consensus/validators",
+                "design/consensus/finality",
+                "design/consensus/validity-proofs",
+                "design/consensus/slashing",
+              ],
+            },
+            {
+              type: "category",
+              label: "Data",
+              link: {
+                type: "generated-index",
+              },
+              collapsed: true,
+              items: [
+                "design/data/data-flow",
+                "design/data/fraud-proofs",
+                "design/data/erasure-coding",
+                "design/data/das",
+                "design/data/attestation"
+              ],
+            },
+            {
+              type: "category",
+              label: "Network",
+              link: {
+                type: "generated-index",
+              },
+              collapsed: true,
+              items: [
+                "design/network/libp2p",
+                "design/network/kad-dht",
+                "design/network/light-client",
+                "design/network/attestation-bridge",
+              ],
+            },
+          ],
+        },
         "about/introduction/app-id",
         "about/introduction/light-client",
         "about/introduction/validiums",

@@ -154,8 +154,8 @@ The Kate testnet offers a multitude of avenues for user engagement:
 
 - **Explorer**: Navigate the blockchain with ease using our [<ins>Explorer</ins>](https://kate.avail.tools).
 - **Endpoints**: 
-  - **RPC**: Connect directly via [<ins>RPC Endpoint</ins>](https://kate.avail.tools/v1).
-  - **WebSocket**: For real-time updates, use [<ins>WebSocket Endpoint</ins>](wss://kate.avail.tools/ws).
+  - **RPC**: Connect directly via **<ins>(https://kate.avail.tools/v1)</ins>**.
+  - **WebSocket**: For real-time updates, use **<ins>wss://kate.avail.tools/ws)</ins>**.
 - **Chain Specifications**: Interested in the nitty-gritty? Check out the [<ins>chainspec.raw.json</ins>](https://kate.avail.tools/#/explorer/chainspec).
 - **Chain Info**: For a textual overview, refer to `chaininfo.txt`.
 ---
