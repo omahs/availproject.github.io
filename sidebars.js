@@ -146,7 +146,6 @@ module.exports = {
         "about/introduction/validiums",
       ],
     },
-    /*
     {
       type: "category",
       label: "Build",
@@ -172,7 +171,6 @@ module.exports = {
         "build/volitions",
       ],
     },
-    */
     {
       type: "category",
       label: "Operate",
