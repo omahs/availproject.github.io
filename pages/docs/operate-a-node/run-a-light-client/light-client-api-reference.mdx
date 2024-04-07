@@ -23,7 +23,7 @@ import { Callout } from 'nextra/components'
 
 <Callout type="info">
 BEFORE WE START
-1. The indiviual behaviour of some methods may differ depending on which mode the light client is runnning in.
+1. The individual behaviour of some methods may differ depending on which mode the light client is running in.
 This will be documented in the individual method descriptions.
 2. It is recommended to use `API-v2` over `API-v1`, although both are supported.
 3. The methods documented here were tested on a locally running instance of the Avail light client.
@@ -538,7 +538,7 @@ Gets current status and active modes of the light client.
 - **latest** - block number of the latest [finalized](https://docs.substrate.io/learn/consensus/) block received from the node
 - **available** - range of blocks with verified data availability (configured confidence has been achieved)
 - **app_data** - range of blocks with app data retrieved and verified
-- **historical_sync** - state for historical blocks syncing up to configured block (ommited if historical sync is not configured)
+- **historical_sync** - state for historical blocks syncing up to configured block (omitted if historical sync is not configured)
 
 #### Historical sync
 
@@ -742,7 +742,7 @@ Not Found
 
 ### v2/blocks/&#123;block_number&#125;/header
 
-Gets the header for a specifc block if available.
+Gets the header for a specific block if available.
 
 *Params*:
 - `block_number` - block number (required)
@@ -950,7 +950,7 @@ curl -sL1 avail.sh | bash -s -- --app_id 1 --identity identity.toml --network go
 
 Submits application data to the avail network.\
 In case of `data` transaction, data transaction is created, signed and submitted.\
-In case of `extrinsic`, externaly created and signed transaction is submitted. 
+In case of `extrinsic`, externally created and signed transaction is submitted. 
 
 Only one field is allowed per request.\
 Both `data` and `extrinsic` has to be encoded using base64 encoding.
@@ -1042,7 +1042,7 @@ The Avail Light Client WebSocket API allows real-time communication between a cl
 persistent connection. The Web socket API can be used on its own or in combination with HTTP API to enable different pull/push use cases.
 
 <Callout type="info">
-`HTTP` and `Websocket` are twi different ways of communicating with a server. `HTTP` is a request-response protocol,
+`HTTP` and `Websocket` are two different ways of communicating with a server. `HTTP` is a request-response protocol,
 where a connection persists for only so long as the request is being processed. In contrast, a websocket connection
 persists for as long as the client and server are connected. This allows for real-time communication between the two,
 and enables the client to fetch information from the server as soon as it is available, without having to
@@ -1052,7 +1052,7 @@ poll the server for updates.
 <Callout type="info">
 HOW TO CONNECT TO THE WEBSOCKET SERVER <br/>
 You cannot use `CURL` to send websocket commands, since `CURL` cannot maintain a persistent connection.
-Although there are a variety of librariries we can use, the following examples are using [wscat](https://github.com/websockets/wscat).
+Although there are a variety of libraries we can use, the following examples are using [wscat](https://github.com/websockets/wscat).
 
 To install `wscat`, simply run:
 ```sh
