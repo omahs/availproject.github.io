@@ -28,7 +28,7 @@ Before trying anything, make sure that you fully read the chapter first before d
 </Callout>
 
 
-With our infrastructure set up and our node running, we are ready to register ourselves as potential future validators. If the need for on-chain registration to become a validator seems foreign to you, then this would be a perfect opportunity to do your own research about how Proof of Stake and Nominated Proof Of Stake works.
+With our infrastructure set up and our node running, we are ready to register ourselves as potential future validators. If the need for on-chain registration to become a validator seems foreign to you, then this would be a perfect opportunity to do your own research about how Proof of Stake and Nominated Proof Of Stake work.
 
 In short, to prevent people from running faulty validators and earning tokens, all validators need to bond a certain amount of tokens to register and be eligible for the position of producing blocks. With that mechanism in place, all validators that are in some way faulty will either be deregistered or, in the worst case, slashed.
 
@@ -66,7 +66,7 @@ podman exec -lit /bin/bash
 # Generate the Session keys
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
 
-# Exit and restart containe
+# Exit and restart container
 exit
 
 # Option 1: Docker non-root
